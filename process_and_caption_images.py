@@ -19,7 +19,7 @@ def process_images(output_dir, dataset_name):
 
     # Wrap the dataset in tqdm to display a progress bar
     for idx, sample in tqdm(enumerate(dataset['train'])):
-        image = Image.fromarray(sample['image'])
+        image = sample['image']
         text = caption_image(image, model, transform)
         filename = f"{idx}.jpg"
         filepath = os.path.join(output_dir, filename)
